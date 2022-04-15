@@ -1533,7 +1533,7 @@ namespace LCD1IN8 {
         LCD_SetColor(Color, LCD_WIDTH + 2, LCD_HEIGHT + 2);
     }
 	
-	//% blockId=LCD_SetBL
+    //% blockId=LCD_SetBL
     //% blockGap=8
     //% block="Set back light level %Lev"
 	//% Lev.min=0 Lev.max=1023
@@ -1859,6 +1859,13 @@ namespace LCD1IN8 {
                 off++;
         }// Write all
     }
+
+    /**
+    * Select a color.
+    */
+    //% blockId="select_color" block="select a color from %Color"
+    export function select_color(Color: COLOR): number{return Color};
+
 
     //spi ram
     function SPIRAM_Set_Mode(mode:number): void {
