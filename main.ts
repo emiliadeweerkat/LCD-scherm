@@ -1405,7 +1405,7 @@ pins.spiFrequency(18000000)
 namespace LCD1IN8 {
     //% blockId=LCD_Init
     //% blockGap=8
-    //% block="LCD1IN8 Init"
+    //% block="LCD1IN8 Init" block.loc.nl="Start Scherm"
     //% weight=200
     export function LCD_Init(): void{
         pins.digitalWritePin(DigitalPin.P8, 1);
@@ -1517,7 +1517,7 @@ namespace LCD1IN8 {
     
     //% blockId=LCD_Clear
     //% blockGap=8
-    //% block="LCD Clear"
+    //% block="LCD Clear" block.loc.nl=""Maak scherm leeg"
     //% weight=195
     export function LCD_Clear(): void{
         LCD_SetWindows(0, 0, LCD_WIDTH, LCD_HEIGHT);
@@ -1526,7 +1526,7 @@ namespace LCD1IN8 {
 
     //% blockId=LCD_Filling
     //% blockGap=8
-    //% block="Filling Color %Color"
+    //% block="Filling Color %Color" block.loc.nl="Vul scherm met kleur %Color"
     //% weight=195
     export function LCD_Filling(Color: COLOR): void{
         LCD_SetWindows(0, 0, LCD_WIDTH, LCD_HEIGHT);
@@ -1535,8 +1535,8 @@ namespace LCD1IN8 {
 	
     //% blockId=LCD_SetBL
     //% blockGap=8
-    //% block="Set back light level %Lev"
-	//% Lev.min=0 Lev.max=1023
+    //% block="Set back light level %Lev" block.loc.nl="Zet achtergrondverlichting op %Lev"
+    //% Lev.min=0 Lev.max=1023
     //% weight=180
     export function LCD_SetBL(Lev: number): void{
         pins.analogWritePin(AnalogPin.P1, 1023)
@@ -1597,7 +1597,7 @@ namespace LCD1IN8 {
     
     //% blockId=Draw_Clear
     //% blockGap=8
-    //% block="Clear Drawing cache"
+    //% block="Clear Drawing cache" block.loc.nl="Maak scherm geheugen leeg"
     //% weight=195
     export function LCD_ClearBuf(): void {
         let i;
@@ -1616,7 +1616,7 @@ namespace LCD1IN8 {
     
     //% blockId=LCD_Display
     //% blockGap=8
-    //% block="Show Full Screen"
+    //% block="Show Full Screen" block.loc.nl="Toon scherm geheugen"
     //% weight=190
     export function LCD_Display(): void {
         SPIRAM_Set_Mode(SRAM_STREAM_MODE);
@@ -1652,7 +1652,7 @@ namespace LCD1IN8 {
         
     //% blockId=DrawPoint
     //% blockGap=8
-    //% block="Draw Point|x %Xpoint|y %Ypoint|Color %Color|Point Size %Dot_Pixel"
+    //% block="Draw Point|x %Xpoint|y %Ypoint|Color %Color|Point Size %Dot_Pixel" block.loc.nl="Teken punt|x %Xpoint|y %Ypoint|Kleur %Color|Grootte %Dot_Pixel"
     //% Xpoint.min=1 Xpoint.max=160 Ypoint.min=1 Ypoint.max=128
     //% Color.min=0 Color.max=65535
     //% weight=150
@@ -1668,6 +1668,7 @@ namespace LCD1IN8 {
 	//% blockId=DrawLine
 	//% blockGap=8
 	//% block="Draw Line|Xstart %Xstart|Ystart %Ystart|Xend %Xend|Yend %Yend|Color %Color|width %Line_width|Style %Line_Style"
+	//% block.loc.nl="Teken lijn|Xstart %Xstart|Ystart %Ystart|Xeinde %Xend|Yeinde %Yend|Kleur %Color|Lijndikte %Line_width|Stijl %Line_Style"
 	//% Xstart.min=1 Xstart.max=160 Ystart.min=1 Ystart.max=128
 	//% Xend.min=1 Xend.max=160 Yend.min=1 Yend.max=128
 	//% Color.min=0 Color.max=65535
@@ -1716,6 +1717,7 @@ namespace LCD1IN8 {
     //% blockId=DrawRectangle
     //% blockGap=8
     //% block="Draw Rectangle|Xstart2 %Xstart2|Ystart2 %Ystart2|Xend2 %Xend2|Yend2 %Yend2|Color %Color|Filled %Filled |Line width %Dot_Pixel"
+    //% block.loc.nl="Teken Rechthoek|Xstart2 %Xstart2|Ystart2 %Ystart2|Xeinde2 %Xeinde2|Yeined2 %Yeinde2|Kleur %Color|Gevuld %Filled |Lijndikte %Dot_Pixel"
     //% Xstart2.min=1 Xstart2.max=160 Ystart2.min=1 Ystart2.max=128 
     //% Xend2.min=1 Xend2.max=160 Yend2.min=1 Yend2.max=128
     //% Color.min=0 Color.max=65535
@@ -1742,6 +1744,7 @@ namespace LCD1IN8 {
     //% blockId=DrawCircle
     //% blockGap=8
     //% block="Draw Circle|X_Center %X_Center|Y_Center %Y_Center|Radius %Radius|Color %Color|Filled %Draw_Fill|Line width %Dot_Pixel"
+    //% block.loc.nl="Teken cirkel|X_midden %X_Center|Y_midden %Y_Center|Straal %Radius|Kleur %Color|Gevuld %Draw_Fill|Lijndikte %Dot_Pixel"
 	//% X_Center.min=1 X_Center.max=160 Y_Center.min=1 Y_Center.max=128
 	//% Radius.min=0 Radius.max=160
     //% Color.min=0 Color.max=65535
@@ -1799,7 +1802,7 @@ namespace LCD1IN8 {
     
     //% blockId=DisString
     //% blockGap=8
-    //% block="Show String|X %Xchar|Y %Ychar|char %ch|Color %Color"
+    //% block="Show String|X %Xchar|Y %Ychar|char %ch|Color %Color" block.loc.nl="Teken tekst|X %Xchar|Y %Ychar|tekst %ch|Kleur %Color"
     //% Xchar.min=1 Xchar.max=160 Ychar.min=1 Ychar.max=128 
     //% Color.min=0 Color.max=65535
     //% weight=100
@@ -1833,7 +1836,7 @@ namespace LCD1IN8 {
     
     //% blockId=DisNumber
     //% blockGap=8
-    //% block="Show number|X %Xnum|Y %Ynum|number %num|Color %Color"
+    //% block="Show number|X %Xnum|Y %Ynum|number %num|Color %Color" block.loc.nl="Teken cijfer|X %Xnum|Y %Ynum|Cijfer %num|Kleur %Color"
     //% Xnum.min=1 Xnum.max=160 Ynum.min=1 Ynum.max=128 
     //% Color.min=0 Color.max=65535
     //% weight=100
@@ -1863,7 +1866,7 @@ namespace LCD1IN8 {
     /**
     * Select a color.
     */
-    //% blockId="select_color" block="select a color from %Color"
+    //% blockId="select_color" block="select a color %Color"  block.loc.nl="kies een kleur %Color"
     export function select_color(Color: COLOR): number{return Color};
 
 
